@@ -35,8 +35,8 @@ afio $414 + constant EXTI_PR
 
 
 \ irq service routine
-: isr
-    EXTI_PR @ case \ lade 
+: gpio_isr
+    EXTI_PR @ case \ irq status case
 	dup 0 bit and ?of \ check for exti0
 	    CR ." PA0"
 	    0 bit EXTI_PR bis! \ clear exti0
@@ -58,7 +58,7 @@ afio $414 + constant EXTI_PR
 \    imode-pull PA0 io-mode! \ most other things
     
 
-    ['] isr irq-exti0 ! \ set isr for exti0
+    ['] gpio_isr irq-exti0 ! \ set isr for exti0
     
     $000F EXTICR1 bic!   \ PA0 for exti0
     0 bit EXTI_RTSR bis! \ rising edge for exti0
@@ -76,7 +76,7 @@ afio $414 + constant EXTI_PR
 \    imode-pull PB5 io-mode!
 \    imode-pull PB8 io-mode!
     
-    ['] isr irq-exti5 ! \ set isr for exti5-9 (!)
+    ['] gpio_isr irq-exti5 ! \ set isr for exti5-9 (!)
     
     $00E0 EXTICR2 bic! $0010 EXTICR2 bis!   \ PB5 for exti5
     $000E EXTICR3 bic! $0001 EXTICR3 bis!   \ PB8 for exti8
