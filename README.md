@@ -9,6 +9,8 @@ Forth Examples on STM32
 
 - gpio_irq.fs
 
+### IR receiver with TSOP1338 nec protocol
+
 ### Interrupts driven buttons with repeat
 
 - button_irq.fs
