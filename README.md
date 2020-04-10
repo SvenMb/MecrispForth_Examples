@@ -11,6 +11,8 @@ Forth Examples on STM32
 
 ### IR receiver with TSOP1338 nec protocol
 
+- TSOP1838.fs
+
 ### Interrupts driven buttons with repeat
 
 - button_irq.fs
