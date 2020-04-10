@@ -9,7 +9,7 @@ Forth Examples on STM32
 
 - gpio_irq.fs
 
-### IR receiver with TSOP1338 nec protocol
+### IR receiver with TSOP1838 nec protocol
 
 - TSOP1838.fs
 
