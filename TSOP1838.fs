@@ -71,7 +71,7 @@ afio $414 + constant EXTI_PR
 
 \ setup code for only PA2
 : irsetup
-    imode-float PA2 io-mode! \ for touch sensor
+    imode-float PA2 io-mode! \ for IR TSOP1838 sensor
     ['] ir_isr irq-exti2 ! \ set isr for exti2
     
     $0F00 EXTICR1 bic!   \ PA2 for exti2
